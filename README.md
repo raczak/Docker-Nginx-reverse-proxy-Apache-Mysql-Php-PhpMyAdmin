@@ -13,7 +13,8 @@ Avec cette architecture, je vous propose de mettre en place `Nginx` en serveur p
 ## Installation
 * Clonez ce dépôt à l'emplacement de votre choix sur votre serveur.
 * Modifiez le fichier `.env` avec les informations de votre serveur et ce que vous désirez pour mot de passe MySQL (néanmoins cela fonctionne avec les paramètres de bases).
-* Exécutez la commande suivante : `docker-compose up -d`
+* Exécutez la commande suivante : `docker build -t apachemy`.
+* Puis exécutez la commande suivante : `docker-compose up -d`.
 * Faites un `docker ps` et vous constaterez le bon fonctionnement de vos conteneurs.
 
 ## Configuration
@@ -27,11 +28,12 @@ Les fichiers de configuration de `Apache` sont dans le dossier `etc/apache/`. Vo
 Le dossier contenant vos sites web se trouve dans `web/`. Pour chaque site, créé un sous-dossier www.monsite.com et éditez les fichiers de conf d'apache, ainsi que ceux d'Nginx.
 
 ### Mysql
+Pour ne pas perdre nos données à chaque redémarrage de docker, nous allons les stocké (shared folder) dans notre machine dans : `data/db/mysql`.
 
 ### Variables d'environement
 Le fichier `.env`, vous permettra de définir l'adresse de votre serveur, le nom de compte mot de passe Mysql et d'autres options de constructions de containers.
 
-### [Optionel] Sécurisez votre site via SSL avec letsencrypt
+### [Optionnel] Sécurisez votre site via SSL avec letsencrypt
 Comming soon !
 
 Un bug ? Des questions ? Vous voulez rejoindre la communauté Sosnoob.com ? [**Notre discord**](http://)
