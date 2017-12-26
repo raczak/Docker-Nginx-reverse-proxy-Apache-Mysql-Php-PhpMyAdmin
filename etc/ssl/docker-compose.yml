@@ -1,0 +1,12 @@
+version: "2"
+services:
+    mycertbot:
+        image: certbot/certbot
+        container_name: certbot-docker
+        volumes:
+            - "./mycertificate/letsencrypt:/etc/letsencrypt"
+            - "./mycertificate/letsencrypt-lib/:/var/lib/letsencrypt"
+        ports:
+            - "83:80"
+            - "443:443"
+
