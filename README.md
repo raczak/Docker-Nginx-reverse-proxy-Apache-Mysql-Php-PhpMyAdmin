@@ -44,7 +44,7 @@ Les fichiers de configuration de `Apache` sont dans le dossier `etc/apache/`. Vo
 2. Remplacer de-dans les liens par ceux de votre site (ne changez pas le lien du **DocumentRoot** ni **Directory**, seulement le `toto.com`).
 3. Exécutez la commande `sudo docker exec -t apache-docker a2ensite toto.com.conf` dans ce même dossier.
 
-Le dossier contenant vos sites web se trouve dans `web/`. Pour chaque site, créé un sous-dossier www.monsite.com et éditez les fichiers de conf d'apache, ainsi que ceux d'Nginx.
+Le dossier contenant vos sites web se trouve dans `web/`. Pour chaque site, créez un sous-dossier www.toto.com et éditez les fichiers de conf d'apache, ainsi que ceux d'Nginx.
 
 ### Mysql
 Pour ne pas perdre nos données à chaque redémarrage de docker, nous allons les stocker (shared folder) dans notre machine dans : `data/db/mysql`.
@@ -72,13 +72,14 @@ Félicitations vous avez mis en place votre site en HTTPS !
 Pour le renouveler, rien de plus simple, exécutez de nouveau l'étape 3.
 ![](https://raw.githubusercontent.com/raczak/Docker-Nginx-reverse-proxy-Apache-Mysql-Php-PhpMyAdmin/master/https.PNG)
 
-## [Optionnel] Rediriger les requêtes sur le port 80 (http) vers le 443 (https)
+### [Optionnel] Rediriger les requêtes sur le port 80 (http) vers le 443 (https)
 Pour vous assurer de ne plus avoir d'accès non sécurisés :
 1. Editez le fichier `etc/nginx/conf.d/default.template` et dé-commentez la partie `To forward http to https`.
 2. Remplacez à la ligne `server_name` l'url par celle de votre site.
 3. Redémarrez le container Nginx avec `sudo docker restart nginx-docker`.
 
-Un bug ? Des questions ? Vous voulez rejoindre la communauté Sosnoob.com ? [**Notre discord**](http://)
+Un bug ? Des questions ? Vous voulez rejoindre la communauté Sosnoob.com ? [**Notre discord**](https://discord.gg/9x3tcQ)
+![](https://raw.githubusercontent.com/raczak/Docker-Nginx-reverse-proxy-Apache-Mysql-Php-PhpMyAdmin/master/Discord-Logo.jpg)
 
 ## Documentation
 [Accéder au tuto pour comprendre le projet et pouvoir y contribuer](https://www.sosnoob.com/nginx-apache-php-mysql-avec-docker/)
