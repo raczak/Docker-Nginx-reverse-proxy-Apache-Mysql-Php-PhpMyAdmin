@@ -10,6 +10,11 @@ Dans le but de répondre à un besoin exprimé par la communauté, j'ai créé u
 
 Avec cette architecture, je vous propose de mettre en place `Nginx` en serveur proxy pour rediriger nos requêtes, `apache` en serveur web avec `php`, `mysql` pour la gestion des données de nos apps et `phpmyadmin` pour gérer la base de données.
 
+## :warning: Pré-requis
+* Une machine sous Windows, Linux ou Mac OS.
+* Docker installé sur la machine.
+* Docker-compose installé sur la machine.
+
 ## Installation
 * Clonez ce dépôt à l'emplacement de votre choix sur votre serveur.
 * Modifiez le fichier `.env` avec les informations de votre serveur et ce que vous désirez pour mot de passe MySQL (néanmoins cela fonctionne avec les paramètres de bases).
@@ -44,7 +49,7 @@ Les fichiers de configuration de `Apache` sont dans le dossier `etc/apache/`. Vo
 2. Remplacer de-dans les liens par ceux de votre site (ne changez pas le lien du **DocumentRoot** ni **Directory**, seulement le `toto.com`).
 3. Exécutez la commande `sudo docker exec -t apache-docker a2ensite toto.com.conf` dans ce même dossier.
 
-Le dossier contenant vos sites web se trouve dans `web/`. Pour chaque site, créez un sous-dossier www.toto.com et éditez les fichiers de conf d'apache, ainsi que ceux d'Nginx.
+**Le dossier contenant vos sites web se trouve dans `web/`. Pour chaque site, créez un sous-dossier `www.toto.com` et éditez les fichiers de conf d'apache, ainsi que ceux d'Nginx.**
 
 ### Mysql
 Pour ne pas perdre nos données à chaque redémarrage de docker, nous allons les stocker (shared folder) dans notre machine dans : `data/db/mysql`.
