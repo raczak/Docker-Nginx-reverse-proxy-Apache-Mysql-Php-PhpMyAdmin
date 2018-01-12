@@ -83,7 +83,7 @@ Pour vous assurer de ne plus avoir d'accès non sécurisés :
 2. Remplacez à la ligne `server_name` l'url par celle de votre site.
 3. Redémarrez le container Nginx avec `sudo docker restart nginx-docker`.
 
-Un bug ? Des questions ? Vous voulez rejoindre la communauté Sosnoob.com ? [**Notre discord**](https://discord.gg/9x3tcQ)
+Un bug ? Des questions ? Vous voulez rejoindre la communauté Sosnoob.com ? [**Notre discord**](https://discord.gg/fnsPsyK)
 ![](https://raw.githubusercontent.com/raczak/Docker-Nginx-reverse-proxy-Apache-Mysql-Php-PhpMyAdmin/master/Discord-Logo.jpg)
 
 ## Documentation
